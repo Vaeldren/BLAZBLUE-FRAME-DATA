@@ -1,0 +1,67 @@
+package org.example.model;
+import java.util.Objects;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+public class FrameData {
+    private @Id
+    @GeneratedValue Long id;
+    private String characterName;
+    private String input;
+    private int damage;
+    private String guard;
+    private int startup;
+    private int active;
+    private int recovery;
+    private int onBlock;
+    private int onODR;
+    private String attribute;
+    private String invuln;
+    private int p1;
+    private int p2;
+    private String starter;
+    private String cancel;
+    private int level;
+    private String groundHit;
+    private String airHit;
+    private String groundCH;
+    private String airCH;
+    private int blockstop;
+    private String hitstop;
+    private String CHstop;
+
+    FrameData(){}
+    FrameData(  String characterName, String input, int damage, String guard, int startup, int active, int recovery,
+                int onBlock, int onODR, String attribute, String invuln, int p1,
+                int p2, String starter, String cancel, int level, String groundHit,
+                String airHit, String groundCH, String airCH, int blockstop,
+                String hitstop, String CHstop){
+        this.characterName = characterName;
+        this.input = input;
+        this.damage = damage;
+        this.guard = guard;
+        this.startup = startup;
+        this.active = active;
+        this.recovery = recovery;
+        this.onBlock = onBlock;
+        this.onODR = onODR;
+        this.attribute = attribute;
+        this.invuln = invuln;
+        this.p1 = p1;
+        this.p2 = p2;
+        this.starter = starter;
+        this.cancel = cancel;
+        this.level = level;
+        this.groundHit = groundHit;
+        this.airHit = airHit;
+        this.groundCH = groundCH;
+        this.airCH = airCH;
+        this.blockstop = blockstop;
+        this.hitstop = hitstop;
+        this.CHstop = CHstop;
+    }
+}
