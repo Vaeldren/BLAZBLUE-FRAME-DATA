@@ -14,7 +14,6 @@ import java.util.ArrayList;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class FrameData {
     private @Id
@@ -45,6 +44,9 @@ public class FrameData {
     @Column(columnDefinition = "JSON")
     private ArrayList<String> images;
 
+    public FrameData(){
+
+    }
     FrameData(  String characterName, String input, String damage, String guard, String startup, String active, String recovery,
                 String onBlock, String onODR, String attribute, String invuln, String p1,
                 String p2, String starter, String cancel, String level, String groundHit,
