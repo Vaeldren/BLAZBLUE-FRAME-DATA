@@ -1,12 +1,15 @@
 package org.example.model;
-import java.util.ArrayList;
-import java.util.Objects;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
 
 @Entity
 @Getter
@@ -15,37 +18,37 @@ import lombok.Setter;
 @AllArgsConstructor
 public class FrameData {
     private @Id
-    @GeneratedValue Long frameDataID;
+    @GeneratedValue Long id;
     private String characterName;
     private String input;
-    private int damage;
+    private String damage;
     private String guard;
-    private int startup;
-    private int active;
-    private int recovery;
-    private int onBlock;
-    private int onODR;
+    private String startup;
+    private String active;
+    private String recovery;
+    private String onBlock;
+    private String onODR;
     private String attribute;
     private String invuln;
-    private int p1;
-    private int p2;
+    private String p1;
+    private String p2;
     private String starter;
     private String cancel;
-    private int level;
+    private String level;
     private String groundHit;
     private String airHit;
     private String groundCH;
     private String airCH;
-    private int blockstop;
+    private String blockstop;
     private String hitstop;
     private String CHstop;
     @Column(columnDefinition = "JSON")
     private ArrayList<String> images;
 
-    public FrameData( String characterName, String input, int damage, String guard, int startup, int active, int recovery,
-                int onBlock, int onODR, String attribute, String invuln, int p1,
-                int p2, String starter, String cancel, int level, String groundHit,
-                String airHit, String groundCH, String airCH, int blockstop,
+    FrameData(  String characterName, String input, String damage, String guard, String startup, String active, String recovery,
+                String onBlock, String onODR, String attribute, String invuln, String p1,
+                String p2, String starter, String cancel, String level, String groundHit,
+                String airHit, String groundCH, String airCH, String blockstop,
                 String hitstop, String CHstop){
         this.characterName = characterName;
         this.input = input;
@@ -71,16 +74,4 @@ public class FrameData {
         this.hitstop = hitstop;
         this.CHstop = CHstop;
     }
-
-    public Long getFrameDataID(){
-        return frameDataID;
-    }
-
-    public String getInput(){
-        return input;
-    }
-    public ArrayList<String> getImages() {
-        return images;
-    }
-
 }
