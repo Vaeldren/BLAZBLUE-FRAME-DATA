@@ -1,15 +1,21 @@
 package org.example.model;
+import java.util.ArrayList;
 import java.util.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class FrameData {
     private @Id
-    @GeneratedValue Long id;
+    @GeneratedValue Long frameDataID;
     private String characterName;
     private String input;
     private int damage;
@@ -33,9 +39,10 @@ public class FrameData {
     private int blockstop;
     private String hitstop;
     private String CHstop;
+    @Column(columnDefinition = "JSON")
+    private ArrayList<String> images;
 
-    FrameData(){}
-    FrameData(  String characterName, String input, int damage, String guard, int startup, int active, int recovery,
+    public FrameData( String characterName, String input, int damage, String guard, int startup, int active, int recovery,
                 int onBlock, int onODR, String attribute, String invuln, int p1,
                 int p2, String starter, String cancel, int level, String groundHit,
                 String airHit, String groundCH, String airCH, int blockstop,
@@ -64,4 +71,16 @@ public class FrameData {
         this.hitstop = hitstop;
         this.CHstop = CHstop;
     }
+
+    public Long getFrameDataID(){
+        return frameDataID;
+    }
+
+    public String getInput(){
+        return input;
+    }
+    public ArrayList<String> getImages() {
+        return images;
+    }
+
 }
