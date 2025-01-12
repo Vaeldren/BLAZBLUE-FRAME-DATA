@@ -2,12 +2,12 @@ package org.example.controller;
 
 import org.example.model.FrameData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,6 +15,7 @@ import java.util.List;
 public class FrameDataController {
     @Autowired
     private FrameDataService frameDataService;
+    private FrameDataRepository repository;
 
     // Dynamic endpoint to get frame data for any character
     @GetMapping("/{characterName}")
@@ -31,4 +32,16 @@ public class FrameDataController {
         FrameData frameData = frameDataService.getFrameDataByCharacterAndInput(characterName,input);
         return ResponseEntity.ok(frameData);
     }
+
+    @GetMapping("/{characterName}/{input}/image")
+    public ResponseEntity<ArrayList<String>> getImage(@PathVariable String characterName, @PathVariable String input){
+        ArrayList<String> image = frameDataService.getImageByCharacterAndInput(characterName, input);
+        return ResponseEntity.ok(image);
+    }
+    @PostMapping("/{characterName}/{input}")
+    public ResponseEntity<FrameData> addFrameData (@RequestBody FrameData frameData){
+        repository.save(frameData);
+        return ResponseEntity.ok(frameData);
+    }
+
 }
