@@ -2,11 +2,9 @@ package org.example.controller;
 
 import org.example.model.FrameData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +13,6 @@ import java.util.List;
 public class FrameDataController {
     @Autowired
     private FrameDataService frameDataService;
-    private FrameDataRepository repository;
 
     // Dynamic endpoint to get frame data for any character
     @GetMapping("/{characterName}")
@@ -38,10 +35,17 @@ public class FrameDataController {
         ArrayList<String> image = frameDataService.getImageByCharacterAndInput(characterName, input);
         return ResponseEntity.ok(image);
     }
+
     @PostMapping("/{characterName}/{input}")
     public ResponseEntity<FrameData> addFrameData (@RequestBody FrameData frameData){
-        repository.save(frameData);
+        frameDataService.save(frameData);
         return ResponseEntity.ok(frameData);
     }
+    @PostMapping("/batch")
+    public ResponseEntity<String> saveFrameDataBatch(@RequestBody List<FrameData> frameDataList){
+        frameDataService.saveAll(frameDataList);
+        return ResponseEntity.ok("Batch data saved successfully");
+    }
+
 
 }

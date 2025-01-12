@@ -5,10 +5,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.event.InternalFrameAdapter;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FrameDataService {
@@ -35,5 +35,14 @@ public class FrameDataService {
 
         return frameDataRepository.save(existingFrameData);
     }
+
+    public void save(FrameData frameData){
+        frameDataRepository.save(frameData);
+    }
+
+    public void saveAll(List<FrameData> frameDataList){
+        frameDataRepository.saveAll(frameDataList);
+    }
+
 
 }
