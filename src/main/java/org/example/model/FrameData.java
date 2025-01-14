@@ -47,6 +47,13 @@ public class FrameData {
     public FrameData(){
 
     }
+
+    public FrameData(String characterName, String input, String damage){
+        this.characterName = characterName;
+        this.input = input;
+        this.damage = damage;
+    }
+
     FrameData(  String characterName, String input, String damage, String guard, String startup, String active, String recovery,
                 String onBlock, String onODR, String attribute, String invuln, String p1,
                 String p2, String starter, String cancel, String level, String groundHit,
