@@ -6,9 +6,9 @@ Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, 
 
 ## To-Do List
 
-* Scrape frame data from the BlazBlue frame data webpage.
+~~* Scrape frame data from the BlazBlue frame data webpage.~~
  
-* Clean and normalize the scraped data for consistent storage.
+~~* Clean and normalize the scraped data for consistent storage.~~
  
 * Design a relational database schema for storing characters and move data.
  
@@ -16,7 +16,7 @@ Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, 
  
    *  GET points for characters, their frame-data, etc
    
-* Add unit tests with JUnit for service and controller layers.
+~~* Add unit tests with JUnit for service and controller layers.~~
  
 * Write integration tests for API endpoints.
  
@@ -26,7 +26,7 @@ Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, 
  
   * Run tests automatically on new commits.
    
-  * Deploy API to a cloud platform (e.g., AWS, Heroku).
+* Deploy API to a cloud platform (e.g., AWS, Heroku).
    
 * Create documentation for API usage.
  
