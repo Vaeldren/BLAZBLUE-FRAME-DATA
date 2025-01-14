@@ -14,41 +14,18 @@ import java.util.List;
 
 public class DustloopScraper {
     public static void main(String[] args){
-/*
         try {
             Document doc;
             doc = Jsoup.connect("https://dustloop.com/wiki/index.php?title=BBCF/Izanami/Frame_Data").get();
-*/
-/*            Element systemData = doc.select("table").get(6);
+            Element systemData = doc.select("table").get(6);
             Element normalMoves = doc.select("table").get(7);
             Element driveMoves = doc.select("table").get(8);
             Element universalMechanics = doc.select("table").get(9);
             Element specials = doc.select("table").get(10);
             Element distortionDrives = doc.select("table").get(11);
             Element exceedAccel = doc.select("table").get(12);
-            Element astralHeat = doc.select("table").get(13);*//*
+            Element astralHeat = doc.select("table").get(13);
 
-            extractTable(doc,7,"Normal Moves","Izanami");
-        } catch (IOException e){
-            System.out.println("Error fetching or parsing document: "+e.getMessage());
-            e.printStackTrace();
-        }
-*/
-
-    }
-
-    public void scrape(){
-        try {
-            Document doc;
-            doc = Jsoup.connect("https://dustloop.com/wiki/index.php?title=BBCF/Izanami/Frame_Data").get();
-/*            Element systemData = doc.select("table").get(6);
-            Element normalMoves = doc.select("table").get(7);
-            Element driveMoves = doc.select("table").get(8);
-            Element universalMechanics = doc.select("table").get(9);
-            Element specials = doc.select("table").get(10);
-            Element distortionDrives = doc.select("table").get(11);
-            Element exceedAccel = doc.select("table").get(12);
-            Element astralHeat = doc.select("table").get(13);*/
             extractTable(doc,7,"Normal Moves","Izanami");
         } catch (IOException e){
             System.out.println("Error fetching or parsing document: "+e.getMessage());
@@ -56,6 +33,7 @@ public class DustloopScraper {
         }
 
     }
+
     private static void extractTable(Document doc, int tableIndex, String tableName, String charName){
         WebClient client = WebClient.create();
         //strip and clean table for input
