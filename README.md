@@ -12,9 +12,11 @@ Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, 
  
 * Design a relational database schema for storing characters and move data.
  
-* Create REST API endpoints:
+* ~~Create REST API endpoints:~~
  
-   *  GET points for characters, their frame-data, etc
+   *  ~~GET points for characters, their frame-data, etc~~
+   *  ~~POST points to insert scraped data from Dustloop~~
+   *  ~~PUT points to update frame data and characters~~
    
 * ~~Add unit tests with JUnit for service and controller layers.~~
  
