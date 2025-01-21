@@ -17,16 +17,23 @@ public class DustloopScraper {
         try {
             Document doc;
             doc = Jsoup.connect("https://dustloop.com/wiki/index.php?title=BBCF/Izanami/Frame_Data").get();
-            Element systemData = doc.select("table").get(6);
+/*            Element systemData = doc.select("table").get(6);
             Element normalMoves = doc.select("table").get(7);
             Element driveMoves = doc.select("table").get(8);
             Element universalMechanics = doc.select("table").get(9);
             Element specials = doc.select("table").get(10);
             Element distortionDrives = doc.select("table").get(11);
             Element exceedAccel = doc.select("table").get(12);
-            Element astralHeat = doc.select("table").get(13);
+            Element astralHeat = doc.select("table").get(13);*/
 
-            extractTable(doc,7,"Normal Moves","Izanami");
+            extractTable(doc,7,"Izanami");
+            extractTable(doc,8,"Izanami");
+            extractTable(doc,9,"Izanami");
+            extractTable(doc,10,"Izanami");
+            extractTable(doc,11,"Izanami");
+            extractTable(doc,12,"Izanami");
+            extractTable(doc,13,"Izanami");
+
         } catch (IOException e){
             System.out.println("Error fetching or parsing document: "+e.getMessage());
             e.printStackTrace();
@@ -34,7 +41,7 @@ public class DustloopScraper {
 
     }
 
-    private static void extractTable(Document doc, int tableIndex, String tableName, String charName){
+    private static void extractTable(Document doc, int tableIndex, String charName){
         WebClient client = WebClient.create();
         //strip and clean table for input
         Element table = doc.select("table").get(tableIndex);

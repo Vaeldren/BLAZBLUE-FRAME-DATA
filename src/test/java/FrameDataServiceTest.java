@@ -1,5 +1,5 @@
-import org.example.controller.FrameDataRepository;
-import org.example.controller.FrameDataService;
+import org.example.repository.FrameDataRepository;
+import org.example.service.FrameDataService;
 import org.example.model.FrameData;
 import org.example.scraper.DustloopScraper;
 import org.junit.Test;
@@ -10,7 +10,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 

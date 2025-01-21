@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import org.example.model.FrameData;
+import org.example.service.FrameDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,8 +32,8 @@ public class FrameDataController {
     }
 
     @GetMapping("/{characterName}/{input}/image")
-    public ResponseEntity<ArrayList<String>> getImage(@PathVariable String characterName, @PathVariable String input){
-        ArrayList<String> image = frameDataService.getImageByCharacterAndInput(characterName, input);
+    public ResponseEntity<List<String>> getImage(@PathVariable String characterName, @PathVariable String input){
+        List<String> image = frameDataService.getImageByCharacterAndInput(characterName, input);
         return ResponseEntity.ok(image);
     }
 

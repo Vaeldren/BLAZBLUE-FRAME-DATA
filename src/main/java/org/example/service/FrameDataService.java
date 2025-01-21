@@ -1,12 +1,11 @@
-package org.example.controller;
+package org.example.service;
 
 import org.example.model.FrameData;
+import org.example.repository.FrameDataRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.event.InternalFrameAdapter;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class FrameDataService {
         return frameDataRepository.findByCharacterNameAndInput(characterName,input);
     }
 
-    public ArrayList<String> getImageByCharacterAndInput(String characterName, String input){
+    public List<String> getImageByCharacterAndInput(String characterName, String input){
         FrameData frameData = frameDataRepository.findByCharacterNameAndInput(characterName, input);
         return frameData.getImages();
     }
