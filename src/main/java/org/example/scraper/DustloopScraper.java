@@ -27,12 +27,12 @@ public class DustloopScraper {
             Element astralHeat = doc.select("table").get(13);*/
 
             extractTable(doc,7,"Izanami");
-            extractTable(doc,8,"Izanami");
+/*            extractTable(doc,8,"Izanami");
             extractTable(doc,9,"Izanami");
             extractTable(doc,10,"Izanami");
             extractTable(doc,11,"Izanami");
             extractTable(doc,12,"Izanami");
-            extractTable(doc,13,"Izanami");
+            extractTable(doc,13,"Izanami");*/
 
         } catch (IOException e){
             System.out.println("Error fetching or parsing document: "+e.getMessage());
@@ -90,6 +90,10 @@ public class DustloopScraper {
             frameData.setCHstop(colVals.get(21).text());
 
             frameDataList.add(frameData);
+        }
+
+        for(FrameData framedata : frameDataList){
+            System.out.println(framedata);
         }
 
         //batch POST the list
