@@ -6,6 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,5 +44,11 @@ public class FrameDataService {
         frameDataRepository.saveAll(frameDataList);
     }
 
-
+    public void deleteByCharacterName(String characterName) {
+        List<FrameData> frameData = frameDataRepository.findByCharacterName(characterName);
+        frameDataRepository.deleteAll(frameData);
+    }
+    public void deleteByCharacterNameAndInput(FrameData frameData) {
+        frameDataRepository.deleteByCharacterNameAndInput(frameData.getCharacterName(),frameData.getInput());
+    }
 }

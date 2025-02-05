@@ -1,4 +1,6 @@
 package org.example.scraper;
+import org.springframework.http.HttpStatus;
+import reactor.core.publisher.Mono;
 
 import org.example.model.FrameData;
 import org.jsoup.*;
@@ -16,7 +18,8 @@ public class DustloopScraper {
     public static void main(String[] args){
         try {
             Document doc;
-            doc = Jsoup.connect("https://dustloop.com/wiki/index.php?title=BBCF/Izanami/Frame_Data").get();
+            String charName = "Jubei";
+            doc = Jsoup.connect("https://dustloop.com/wiki/index.php?title=BBCF/"+charName+"/Frame_Data").get();
 /*            Element systemData = doc.select("table").get(6);
             Element normalMoves = doc.select("table").get(7);
             Element driveMoves = doc.select("table").get(8);
@@ -25,14 +28,13 @@ public class DustloopScraper {
             Element distortionDrives = doc.select("table").get(11);
             Element exceedAccel = doc.select("table").get(12);
             Element astralHeat = doc.select("table").get(13);*/
-
-            extractTable(doc,7,"Izanami");
-/*            extractTable(doc,8,"Izanami");
-            extractTable(doc,9,"Izanami");
-            extractTable(doc,10,"Izanami");
-            extractTable(doc,11,"Izanami");
-            extractTable(doc,12,"Izanami");
-            extractTable(doc,13,"Izanami");*/
+            extractTable(doc,7,charName);
+            extractTable(doc,8,charName);
+            extractTable(doc,9,charName);
+            extractTable(doc,10,charName);
+            extractTable(doc,11,charName);
+            extractTable(doc,12,charName);
+            extractTable(doc,13,charName);
 
         } catch (IOException e){
             System.out.println("Error fetching or parsing document: "+e.getMessage());
@@ -42,7 +44,10 @@ public class DustloopScraper {
     }
 
     private static void extractTable(Document doc, int tableIndex, String charName){
-        WebClient client = WebClient.create();
+        WebClient client = WebClient.builder()
+                .baseUrl("http://localhost:8080")
+                .defaultHeader("Content-Type", "application/json")
+                .build();
         //strip and clean table for input
         Element table = doc.select("table").get(tableIndex);
         Element tbody = table.select("tbody").get(0);
@@ -59,8 +64,15 @@ public class DustloopScraper {
             if (hitboxImages.isEmpty()){
                 hitboxImages= innerDoc.select("tr").get(0).select("img");
             }
+            ArrayList<String> imageLinks = new ArrayList<>();
             //need to store image and link it to input id
-
+            for(Element img : hitboxImages){
+                //split
+                String[] imgSplit = img.attr("srcset").split(", ");
+                String imgLink = imgSplit[imgSplit.length-1];
+                String imgLinkSplit = imgLink.split(" ")[0];
+                imageLinks.add("https://dustloop.com"+imgLinkSplit);
+            }
             Elements colVals = dataRows.get(i).select("td").not(".details-control");
 
             FrameData frameData = new FrameData();
@@ -87,22 +99,27 @@ public class DustloopScraper {
             frameData.setAirCH(colVals.get(18).text());
             frameData.setBlockstop(colVals.get(19).text());
             frameData.setHitstop(colVals.get(20).text());
+            frameData.setImages(imageLinks);
             frameData.setCHstop(colVals.get(21).text());
 
             frameDataList.add(frameData);
         }
 
         for(FrameData framedata : frameDataList){
-            System.out.println(framedata);
+            System.out.println(framedata.getImages());
         }
 
         //batch POST the list
-        WebClient.ResponseSpec responseSpec = client.post()
+        client.post()
                 .uri("/api/frame-data/batch")
                 .body(BodyInserters.fromValue(frameDataList))
-                .retrieve();
-
-
+                .retrieve()
+                .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(),
+                        response -> response.bodyToMono(String.class)
+                                .flatMap(errorBody -> Mono.error(new RuntimeException("API Error: " + errorBody)))
+                )
+                .bodyToMono(Void.class)
+                .block(); // Executes the request synchronously*/
     }
 
     public List<FrameData> extractTableTest(){
