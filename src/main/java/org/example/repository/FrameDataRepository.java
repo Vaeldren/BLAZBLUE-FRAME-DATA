@@ -11,7 +11,6 @@ public interface FrameDataRepository extends JpaRepository<FrameData, Long> {
 
     List<FrameData> findByCharacterName(String characterName);
     FrameData findByCharacterNameAndInput(String characterName, String input);
-
-
-
+    void deleteByCharacterNameAndInput(String characterName, String input);
+    void deleteByIdIn(List<FrameData> frameData);
 }

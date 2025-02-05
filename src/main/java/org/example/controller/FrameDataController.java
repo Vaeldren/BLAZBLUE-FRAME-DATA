@@ -38,15 +38,29 @@ public class FrameDataController {
     }
 
     @PostMapping("/{characterName}/{input}")
-    public ResponseEntity<FrameData> addFrameData (@RequestBody FrameData frameData){
+    public ResponseEntity<String> addFrameData (@RequestBody FrameData frameData){
         frameDataService.save(frameData);
-        return ResponseEntity.ok(frameData);
+        return ResponseEntity.ok("Frame data saved successfully");
     }
+    @DeleteMapping("/{characterName}/{input}")
+    public ResponseEntity<String> deleteFrameData(@PathVariable String characterName, @PathVariable String input){
+        FrameData frameData = frameDataService.getFrameDataByCharacterAndInput(characterName,input);
+        frameDataService.deleteByCharacterNameAndInput(frameData);
+        return ResponseEntity.ok("Frame data deleted successfully");
+    }
+
+    @DeleteMapping("/{characterName}")
+    public ResponseEntity<String> deleteAllFrameData(@PathVariable String characterName){
+        frameDataService.deleteByCharacterName(characterName);
+        return ResponseEntity.ok("All frame data for "+characterName+" deleted successfully");
+    }
+
     @PostMapping("/batch")
     public ResponseEntity<String> saveFrameDataBatch(@RequestBody List<FrameData> frameDataList){
         frameDataService.saveAll(frameDataList);
         return ResponseEntity.ok("Batch data saved successfully");
     }
+
 
 
 }
