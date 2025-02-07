@@ -22,7 +22,8 @@ Other: Postman, MySQL, Docker
    *  ~~GET points for characters, their frame-data, etc~~
    *  ~~POST points to insert scraped data from Dustloop~~
    *  ~~PUT points to update frame data and characters~~
-   
+   *  ~~DELETE points to delete frame data and characters~~
+        
 * ~~Add unit tests with JUnit for service and controller layers.~~
  
 * ~~Containerize the application using Docker.~~
