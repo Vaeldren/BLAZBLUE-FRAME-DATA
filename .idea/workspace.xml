@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="57be55bf-c1be-4876-ad8f-edf8ac43337b" name="Changes" comment="dustloopscraper tested and scraped info. API updated with DELETE methods">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FrameDataMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/FrameDataMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FrameDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/controller/FrameDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/converter/JsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/converter/JsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/FrameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/model/FrameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/FrameDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/repository/FrameDataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scraper/DustloopScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/scraper/DustloopScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/FrameDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/service/FrameDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FrameDataServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/test/java/FrameDataServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Vaeldren&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Vaeldren/BLAZBLUE-FRAME-DATA.git&quot;,
+    &quot;accountId&quot;: &quot;ef80a108-9659-4809-ae14-d0ea92f6d21e&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2rOTEYrcKtTmtqQhVrsqRztQFpL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DustloopScraper.executor": "Run",
+    "Application.FrameDataMain.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Docker.Dockerfile build.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.FrameDataServiceTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/abrah/Downloads/DBNavigator.zip",
+    "onboarding.tips.debug.path": "C:/Users/abrah/IdeaProjects/SPRING_DEMO/BLAZBLUE-FRAME-DATA/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "vcs.Git"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abrah\IdeaProjects\BLAZBLUE-FRAME-DATA\java-backend" />
+      <recent name="C:\Users\abrah\IdeaProjects\BLAZBLUE-FRAME-DATA" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DustloopScraper">
+    <configuration name="DustloopScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="Path" value="C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Users\abrah\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk-21;JAVA_HOME\bin;C:\Users\abrah\AppData\Local\Microsoft\WindowsApps;" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="org.example.scraper.DustloopScraper" />
+      <module name="BLAZBLUE-FRAME-DATA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.scraper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FrameDataMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="Path" value="C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Users\abrah\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk-21;JAVA_HOME\bin;C:\Users\abrah\AppData\Local\Microsoft\WindowsApps;" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="org.example.FrameDataMain" />
+      <module name="BLAZBLUE-FRAME-DATA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <envs>
+        <env name="Path" value="C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Users\abrah\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk-21;JAVA_HOME\bin;C:\Users\abrah\AppData\Local\Microsoft\WindowsApps;" />
+      </envs>
+      <module name="BLAZBLUE-FRAME-DATA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FrameDataServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BLAZBLUE-FRAME-DATA" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FrameDataServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="maven3.8.4-openjdk-17-slim_build" />
+          <option name="buildCliOptions" value="--target build" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DustloopScraper" />
+        <item itemvalue="Application.FrameDataMain" />
+        <item itemvalue="JUnit.FrameDataServiceTest" />
+        <item itemvalue="Docker.Dockerfile build" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57be55bf-c1be-4876-ad8f-edf8ac43337b" name="Changes" comment="" />
+      <created>1736429010718</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736429010718</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit for test">
+      <option name="closed" value="true" />
+      <created>1736429705331</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736429705331</updated>
+    </task>
+    <task id="LOCAL-00002" summary="created service, controller and repository">
+      <option name="closed" value="true" />
+      <created>1736613765570</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736613765570</updated>
+    </task>
+    <task id="LOCAL-00003" summary="expanded functionality of service, controller and repository. added support to store images in framedata entity">
+      <option name="closed" value="true" />
+      <created>1736714228638</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736714228638</updated>
+    </task>
+    <task id="LOCAL-00004" summary="scraper done but needs testing. controller and service have added functionality.">
+      <option name="closed" value="true" />
+      <created>1736721597527</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736721597527</updated>
+    </task>
+    <task id="LOCAL-00005" summary="scraper done but needs testing. controller and service have added functionality.">
+      <option name="closed" value="true" />
+      <created>1736723928240</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736723928240</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added tests for dustloopscraper and service using junit and mockito">
+      <option name="closed" value="true" />
+      <created>1736874783245</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736874783245</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added tests for dustloopscraper and service using junit and mockito">
+      <option name="closed" value="true" />
+      <created>1736874814716</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736874814716</updated>
+    </task>
+    <task id="LOCAL-00008" summary="dependency issues fixed. spring boot runs properly, treat as baseline version to rollback to in case of errors">
+      <option name="closed" value="true" />
+      <created>1737501129977</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737501129977</updated>
+    </task>
+    <task id="LOCAL-00009" summary="api service waits for mysql service now so . added better security to docker-compose with env variables.">
+      <option name="closed" value="true" />
+      <created>1737939090931</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737939090931</updated>
+    </task>
+    <task id="LOCAL-00010" summary="api service waits for mysql service now so . added better security to docker-compose with env variables.">
+      <option name="closed" value="true" />
+      <created>1737939300506</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737939300506</updated>
+    </task>
+    <task id="LOCAL-00011" summary="application.properties stripped of secrets - uses env variables instead">
+      <option name="closed" value="true" />
+      <created>1738079427190</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738079427190</updated>
+    </task>
+    <task id="LOCAL-00012" summary="application.properties stripped of secrets - uses env variables instead">
+      <option name="closed" value="true" />
+      <created>1738080108502</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738080108502</updated>
+    </task>
+    <task id="LOCAL-00013" summary="dustloopscraper tested and scraped info. API updated with DELETE methods">
+      <option name="closed" value="true" />
+      <created>1738770709480</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1738770709480</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <envs>
+      <env key="Path" value="%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Users\abrah\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk-21;C:\Program Files\Java\jdk-21\bin;" />
+    </envs>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="first commit for test" />
+    <MESSAGE value="created service, controller and repository" />
+    <MESSAGE value="expanded functionality of service, controller and repository. added support to store images in framedata entity" />
+    <MESSAGE value="Create maven.yml" />
+    <MESSAGE value="scraper done but needs testing. controller and service have added functionality." />
+    <MESSAGE value="added tests for dustloopscraper and service using junit and mockito" />
+    <MESSAGE value="dependency issues fixed. spring boot runs properly, treat as baseline version to rollback to in case of errors" />
+    <MESSAGE value="api service waits for mysql service now so . added better security to docker-compose with env variables." />
+    <MESSAGE value="application.properties stripped of secrets - uses env variables instead" />
+    <MESSAGE value="dustloopscraper tested and scraped info. API updated with DELETE methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="dustloopscraper tested and scraped info. API updated with DELETE methods" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
