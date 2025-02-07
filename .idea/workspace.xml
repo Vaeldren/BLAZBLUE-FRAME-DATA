@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57be55bf-c1be-4876-ad8f-edf8ac43337b" name="Changes" comment="dustloopscraper tested and scraped info. API updated with DELETE methods">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FrameDataMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/FrameDataMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FrameDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/controller/FrameDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/converter/JsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/converter/JsonConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/FrameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/model/FrameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/FrameDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/repository/FrameDataRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scraper/DustloopScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/scraper/DustloopScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/FrameDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/service/FrameDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FrameDataServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/test/java/FrameDataServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discord-bot/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord-bot/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/example/controller/FrameDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/controller/FrameDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/example/scraper/DustloopScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/org/example/scraper/DustloopScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

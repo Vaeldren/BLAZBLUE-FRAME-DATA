@@ -1,6 +1,6 @@
 
 import discord
-from discord import option
+from discord.commands import option
 import requests
 import json
 import dotenv
@@ -33,17 +33,52 @@ async def get_inputs(ctx: discord.AutocompleteContext):
         #request for char inputs
         characterUnderscore = character.replace(" ","_")
         inputList = requests.get(url+'/frame-data/'+characterUnderscore+"/inputs")
-        return inputList.json()
+        inputListData = inputList.json()
+        return [move for move in inputListData if ctx.value.lower() in move.lower()]
+        
+async def get_characters(ctx: discord.AutocompleteContext):
+    return [char for char in blazblue_centralfiction_characters if char.lower().startswith(ctx.value.lower())]
 
-@bot.slash_command(description="This fetches a character's move")
-@option("character",description="Choose your character",choices=blazblue_centralfiction_characters)
-@option("move",description="Enter the move input",choices=get_inputs())
+class ImagePaginator(discord.ui.View):
+    def __init__(self, embed, images):
+        super().__init__()
+        self.images = images
+        self.embed = embed
+        self.index = 0
+    
+    async def update_embed(self, interaction: discord.Interaction):
+        self.embed.set_image(url=self.images[self.index])
+        await interaction.response.edit_message(embed=self.embed, view=self)
+    
+    @discord.ui.button(label="Previous image", style=discord.ButtonStyle.primary, disabled=True)
+    async def previous(self, button: discord.ui.Button, interaction: discord.Interaction):
+        if self.index > 0:
+            self.index -= 1
+            self.next.disabled = False
+            if self.index == 0:
+                button.disabled = True
+            await self.update_embed(interaction)
+
+    
+    @discord.ui.button(label="Next image", style=discord.ButtonStyle.primary)
+    async def next(self, button: discord.ui.Button, interaction: discord.Interaction):
+        if self.index < len(self.images) - 1:
+            self.index += 1
+            self.previous.disabled = False
+            if self.index == len(self.images) - 1:
+                button.disabled = True
+            await self.update_embed(interaction)
+
+
+@bot.slash_command(name="framedata")
+@option("character",description="Enter the BLAZBLUE character's name",autocomplete=get_characters)
+@option("move",description="Enter the move input",autocomplete=get_inputs)
 async def framedata(ctx: discord.ApplicationContext, 
                     character: str, 
                     move: str):
-    
-    #
-    responseFrameData = requests.get(url+"/frame-data/"+character+"/"+move)
+
+    characterUnderscore = character.replace(" ","_")
+    responseFrameData = requests.get(url+"/frame-data/"+characterUnderscore+"/"+move)
 
     characterFrameData = responseFrameData.json()
 
@@ -51,19 +86,36 @@ async def framedata(ctx: discord.ApplicationContext,
         title=characterFrameData['input'],
         description=characterFrameData['moveName']
     )
-    embed.set_author(name=characterFrameData['characterName'])
-    embed.add_field(name="Startup",value=characterFrameData['startup'], inline=True)
-    embed.add_field(name="Active",value=characterFrameData['active'], inline=True)
-    embed.add_field(name="On Block",value=characterFrameData['onBlock'], inline=True)
-    embed.add_field(name="Guard",value=characterFrameData['guard'])
-    embed.add_field(name="Damage",value=characterFrameData['damage'])
-    embed.add_field(name="Attribute",value=characterFrameData['attribute'])
-    if(characterFrameData['invuln'] != ""):
-        embed.add_field(name="Invuln",value=characterFrameData['invuln'])
-    embed.set_image(url=characterFrameData['images'][0])
+    embed.set_author(name=character)
+
     if(characterFrameData['notes'] != "notes:"):
         embed.set_footer(text=characterFrameData['notes'])
-    await ctx.respond(embed=embed)
+    
+    fields = {
+        "Startup": characterFrameData['startup'],
+        "Active": characterFrameData['active'],
+        "Recovery": characterFrameData['recovery'],
+        "On Block": characterFrameData['onBlock'],
+        "Guard" : characterFrameData['guard'],
+        "Damage" : characterFrameData['damage'],
+        "Attribute" : characterFrameData['attribute'],
+        "Invuln" : characterFrameData['invuln'],
+        "Cancel" : characterFrameData['cancel']
+    }
+    
+    for name, value in fields.items():
+        if value:
+            embed.add_field(name=name, value=value)
+
+    embed.set_thumbnail(url="https://raw.githubusercontent.com/Vaeldren/BLAZBLUE-FRAME-DATA/master/discord-bot/icons/"+characterUnderscore+".png")
+
+    embed.set_image(url=characterFrameData['images'][0])
+    view = ImagePaginator(embed, characterFrameData['images'])
+
+    if(len(characterFrameData['images']) > 1):
+        await ctx.respond(embed=embed,view=view)
+    else:
+        await ctx.respond(embed=embed)
 
 
 # @bot.command
