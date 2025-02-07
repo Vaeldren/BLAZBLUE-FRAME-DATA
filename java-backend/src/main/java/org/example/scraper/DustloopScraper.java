@@ -18,7 +18,7 @@ public class DustloopScraper {
     public static void main(String[] args){
         try {
             Document doc;
-            String charName = "Jubei";
+            String charName = "Ragna_the_Bloodedge";
             doc = Jsoup.connect("https://dustloop.com/wiki/index.php?title=BBCF/"+charName+"/Frame_Data").get();
 /*            Element systemData = doc.select("table").get(6);
             Element normalMoves = doc.select("table").get(7);
@@ -64,6 +64,7 @@ public class DustloopScraper {
             if (hitboxImages.isEmpty()){
                 hitboxImages= innerDoc.select("tr").get(0).select("img");
             }
+            Element dustloopNotes = innerDoc.select("tr").get(2);
             ArrayList<String> imageLinks = new ArrayList<>();
             //need to store image and link it to input id
             for(Element img : hitboxImages){
@@ -76,37 +77,68 @@ public class DustloopScraper {
             Elements colVals = dataRows.get(i).select("td").not(".details-control");
 
             FrameData frameData = new FrameData();
-
-            frameData.setCharacterName(charName);
-            frameData.setInput(colVals.get(0).text());
-            frameData.setDamage(colVals.get(1).text());
-            frameData.setGuard(colVals.get(2).text());
-            frameData.setStartup(colVals.get(3).text());
-            frameData.setActive(colVals.get(4).text());
-            frameData.setRecovery(colVals.get(5).text());
-            frameData.setOnBlock(colVals.get(6).text());
-            frameData.setOnODR(colVals.get(7).text());
-            frameData.setAttribute(colVals.get(8).text());
-            frameData.setInvuln(colVals.get(9).text());
-            frameData.setP1(colVals.get(10).text());
-            frameData.setP2(colVals.get(11).text());
-            frameData.setStarter(colVals.get(12).text());
-            frameData.setCancel(colVals.get(13).text());
-            frameData.setLevel(colVals.get(14).text());
-            frameData.setGroundHit(colVals.get(15).text());
-            frameData.setAirHit(colVals.get(16).text());
-            frameData.setGroundCH(colVals.get(17).text());
-            frameData.setAirCH(colVals.get(18).text());
-            frameData.setBlockstop(colVals.get(19).text());
-            frameData.setHitstop(colVals.get(20).text());
-            frameData.setImages(imageLinks);
-            frameData.setCHstop(colVals.get(21).text());
-
-            frameDataList.add(frameData);
+            if(tableIndex == 7){
+                frameData.setCharacterName(charName);
+                frameData.setInput(colVals.get(0).text());
+                frameData.setMoveName("");
+                frameData.setDamage(colVals.get(1).text());
+                frameData.setGuard(colVals.get(2).text());
+                frameData.setStartup(colVals.get(3).text());
+                frameData.setActive(colVals.get(4).text());
+                frameData.setRecovery(colVals.get(5).text());
+                frameData.setOnBlock(colVals.get(6).text());
+                frameData.setOnODR(colVals.get(7).text());
+                frameData.setAttribute(colVals.get(8).text());
+                frameData.setInvuln(colVals.get(9).text());
+                frameData.setP1(colVals.get(10).text());
+                frameData.setP2(colVals.get(11).text());
+                frameData.setStarter(colVals.get(12).text());
+                frameData.setCancel(colVals.get(13).text());
+                frameData.setLevel(colVals.get(14).text());
+                frameData.setGroundHit(colVals.get(15).text());
+                frameData.setAirHit(colVals.get(16).text());
+                frameData.setGroundCH(colVals.get(17).text());
+                frameData.setAirCH(colVals.get(18).text());
+                frameData.setBlockstop(colVals.get(19).text());
+                frameData.setHitstop(colVals.get(20).text());
+                frameData.setCHstop(colVals.get(21).text());
+                frameData.setImages(imageLinks);
+                frameData.setNotes(dustloopNotes.text());
+                frameDataList.add(frameData);
+            } else {
+                frameData.setCharacterName(charName);
+                frameData.setInput(colVals.get(0).text());
+                frameData.setMoveName(colVals.get(1).text());
+                frameData.setDamage(colVals.get(2).text());
+                frameData.setGuard(colVals.get(3).text());
+                frameData.setStartup(colVals.get(4).text());
+                frameData.setActive(colVals.get(5).text());
+                frameData.setRecovery(colVals.get(6).text());
+                frameData.setOnBlock(colVals.get(7).text());
+                frameData.setOnODR(colVals.get(8).text());
+                frameData.setAttribute(colVals.get(9).text());
+                frameData.setInvuln(colVals.get(10).text());
+                frameData.setP1(colVals.get(11).text());
+                frameData.setP2(colVals.get(12).text());
+                frameData.setStarter(colVals.get(13).text());
+                frameData.setCancel(colVals.get(14).text());
+                frameData.setLevel(colVals.get(15).text());
+                frameData.setBlockstun(colVals.get(16).text());
+                frameData.setGroundHit(colVals.get(17).text());
+                frameData.setAirHit(colVals.get(18).text());
+                frameData.setGroundCH(colVals.get(19).text());
+                frameData.setAirCH(colVals.get(20).text());
+                frameData.setBlockstop(colVals.get(21).text());
+                frameData.setHitstop(colVals.get(22).text());
+                frameData.setCHstop(colVals.get(23).text());
+                frameData.setImages(imageLinks);
+                frameData.setNotes(dustloopNotes.text());
+                frameDataList.add(frameData);
+            }
         }
 
         for(FrameData framedata : frameDataList){
-            System.out.println(framedata.getImages());
+            System.out.println(framedata.getNotes());
         }
 
         //batch POST the list

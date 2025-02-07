@@ -20,6 +20,7 @@ public class FrameData {
     private Long id;
     private String characterName;
     private String input;
+    private String moveName;
     private String damage;
     private String guard;
     private String startup;
@@ -34,6 +35,7 @@ public class FrameData {
     private String starter;
     private String cancel;
     private String level;
+    private String blockstun;
     private String groundHit;
     private String airHit;
     private String groundCH;
@@ -41,6 +43,8 @@ public class FrameData {
     private String blockstop;
     private String hitstop;
     private String CHstop;
+    @Column(columnDefinition = "TEXT")
+    private String notes;
 
     @Column(columnDefinition = "TEXT")
     @Convert(converter = JsonConverter.class)
@@ -55,13 +59,14 @@ public class FrameData {
         this.damage = damage;
     }
 
-    FrameData(String characterName, String input, String damage, String guard, String startup, String active, String recovery,
+    FrameData(String characterName, String input, String moveName, String damage, String guard, String startup, String active, String recovery,
               String onBlock, String onODR, String attribute, String invuln, String p1,
               String p2, String starter, String cancel, String level, String groundHit,
               String airHit, String groundCH, String airCH, String blockstop,
-              String hitstop, String CHstop) {
+              String hitstop, String CHstop, String notes) {
         this.characterName = characterName;
         this.input = input;
+        this.moveName = moveName;
         this.damage = damage;
         this.guard = guard;
         this.startup = startup;
@@ -83,5 +88,6 @@ public class FrameData {
         this.blockstop = blockstop;
         this.hitstop = hitstop;
         this.CHstop = CHstop;
+        this.notes = notes;
     }
 }

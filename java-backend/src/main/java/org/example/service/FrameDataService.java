@@ -36,6 +36,15 @@ public class FrameDataService {
         return frameDataRepository.save(existingFrameData);
     }
 
+    public List<String> getInputsByCharacter(String characterName){
+        List<FrameData> frameDataList = frameDataRepository.findByCharacterName(characterName);
+        List<String> inputs = new ArrayList<String>();
+        for(FrameData frameData : frameDataList){
+            inputs.add(frameData.getInput());
+        }
+        return inputs;
+    }
+
     public void save(FrameData frameData){
         frameDataRepository.save(frameData);
     }

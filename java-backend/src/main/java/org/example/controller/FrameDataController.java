@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.apache.coyote.Response;
 import org.example.model.FrameData;
 import org.example.service.FrameDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,12 @@ public class FrameDataController {
     public ResponseEntity<List<String>> getImage(@PathVariable String characterName, @PathVariable String input){
         List<String> image = frameDataService.getImageByCharacterAndInput(characterName, input);
         return ResponseEntity.ok(image);
+    }
+
+    @GetMapping("/{characterName}/inputs")
+    public ResponseEntity<List<String>> getInputsByCharacter(@PathVariable String characterName){
+        List<String> inputs = frameDataService.getInputsByCharacter(characterName);
+        return ResponseEntity.ok(inputs);
     }
 
     @PostMapping("/{characterName}/{input}")

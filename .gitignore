@@ -4,13 +4,15 @@ target/
 !**/src/test/**/target/
 docker-compose.yml
 .env
+discord-bot/.env
 
+java-backend/.idea/
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-.idea/dbnavigator.xml
+java-backend/.idea/modules.xml
+java-backend/.idea/jarRepositories.xml
+java-backend/.idea/compiler.xml
+java-backend/.idea/libraries/
+java-backend/.idea/dbnavigator.xml
 *.iws
 *.iml
 *.ipr
@@ -40,3 +42,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+.idea/dbnavigator.xml
+.idea/dbnavigator.xml
