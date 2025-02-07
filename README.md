@@ -1,8 +1,13 @@
-### REST API to store and retrieve frame data from BLAZBLUE CENTRALFICTION
+### Discord Bot that can retrieve BLAZBLUE CENTRALFICTION frame data from a REST API
+![image](https://github.com/user-attachments/assets/4710a97f-ec07-456b-b2f3-075113a57100)
+![image](https://github.com/user-attachments/assets/74780774-bbd2-4e5a-804d-a870fa5262bd)
+## Tools, libraries and technologies:
 
-## Tools and technologies to use:
+Java: Spring Boot, JUnit, JSoup
 
-Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, Postman, WebClient
+Python: Pycord, Requests
+
+Other: Postman, MySQL, Docker
 
 ## To-Do List
 
@@ -20,18 +25,15 @@ Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, 
    
 * ~~Add unit tests with JUnit for service and controller layers.~~
  
-* Write integration tests for API endpoints.
- 
 * ~~Containerize the application using Docker.~~
- 
-* Set up CI/CD pipeline to automate testing and deployment:
- 
-  * Run tests automatically on new commits.
+
+* ~~Explore incorporating this API into a Discord bot.~~
    
 * Deploy API to a cloud platform (e.g., AWS, Heroku).
    
-* Create documentation for API usage.
- 
-* Add pagination, filtering, and sorting for API responses (e.g., filter moves by frame properties).
- 
-* Explore incorporating this API into a Discord bot.
+* Add /help command for Discord bot usage - teach fighting game keypad notation.
+
+* Add character system data
+
+* Add testing and error handling for Discord bot
+  
