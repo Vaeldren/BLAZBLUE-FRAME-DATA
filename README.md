@@ -10,7 +10,7 @@ Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, 
  
 * ~~Clean and normalize the scraped data for consistent storage.~~
  
-* Design a relational database schema for storing characters and move data.
+* ~~Design a relational database schema for storing characters and move data.~~
  
 * ~~Create REST API endpoints:~~
  
@@ -22,7 +22,7 @@ Spring Boot (including Spring Data JPA, Spring Security), MySQL, Docker, JUnit, 
  
 * Write integration tests for API endpoints.
  
-* Containerize the application using Docker.
+* ~~Containerize the application using Docker.~~
  
 * Set up CI/CD pipeline to automate testing and deployment:
  

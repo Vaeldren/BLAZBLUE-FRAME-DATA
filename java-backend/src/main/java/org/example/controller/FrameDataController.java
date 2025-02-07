@@ -49,6 +49,11 @@ public class FrameDataController {
         frameDataService.save(frameData);
         return ResponseEntity.ok("Frame data saved successfully");
     }
+    @PostMapping("/{characterName}/{input}")
+    public ResponseEntity<String> addFrameData (@RequestBody FrameData frameData){
+        frameDataService.save(frameData);
+        return ResponseEntity.ok("Frame data saved successfully");
+    }
     @DeleteMapping("/{characterName}/{input}")
     public ResponseEntity<String> deleteFrameData(@PathVariable String characterName, @PathVariable String input){
         FrameData frameData = frameDataService.getFrameDataByCharacterAndInput(characterName,input);

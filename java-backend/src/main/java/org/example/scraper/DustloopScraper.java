@@ -64,7 +64,10 @@ public class DustloopScraper {
             if (hitboxImages.isEmpty()){
                 hitboxImages= innerDoc.select("tr").get(0).select("img");
             }
+<<<<<<< HEAD:java-backend/src/main/java/org/example/scraper/DustloopScraper.java
             Element dustloopNotes = innerDoc.select("tr").get(2);
+=======
+>>>>>>> 1b1e0a7e6c08e6620efbb50b808e921b823211ab:src/main/java/org/example/scraper/DustloopScraper.java
             ArrayList<String> imageLinks = new ArrayList<>();
             //need to store image and link it to input id
             for(Element img : hitboxImages){
@@ -77,6 +80,7 @@ public class DustloopScraper {
             Elements colVals = dataRows.get(i).select("td").not(".details-control");
 
             FrameData frameData = new FrameData();
+<<<<<<< HEAD:java-backend/src/main/java/org/example/scraper/DustloopScraper.java
             if(tableIndex == 7){
                 frameData.setCharacterName(charName);
                 frameData.setInput(colVals.get(0).text());
@@ -139,6 +143,39 @@ public class DustloopScraper {
 
         for(FrameData framedata : frameDataList){
             System.out.println(framedata.getNotes());
+=======
+
+            frameData.setCharacterName(charName);
+            frameData.setInput(colVals.get(0).text());
+            frameData.setDamage(colVals.get(1).text());
+            frameData.setGuard(colVals.get(2).text());
+            frameData.setStartup(colVals.get(3).text());
+            frameData.setActive(colVals.get(4).text());
+            frameData.setRecovery(colVals.get(5).text());
+            frameData.setOnBlock(colVals.get(6).text());
+            frameData.setOnODR(colVals.get(7).text());
+            frameData.setAttribute(colVals.get(8).text());
+            frameData.setInvuln(colVals.get(9).text());
+            frameData.setP1(colVals.get(10).text());
+            frameData.setP2(colVals.get(11).text());
+            frameData.setStarter(colVals.get(12).text());
+            frameData.setCancel(colVals.get(13).text());
+            frameData.setLevel(colVals.get(14).text());
+            frameData.setGroundHit(colVals.get(15).text());
+            frameData.setAirHit(colVals.get(16).text());
+            frameData.setGroundCH(colVals.get(17).text());
+            frameData.setAirCH(colVals.get(18).text());
+            frameData.setBlockstop(colVals.get(19).text());
+            frameData.setHitstop(colVals.get(20).text());
+            frameData.setImages(imageLinks);
+            frameData.setCHstop(colVals.get(21).text());
+
+            frameDataList.add(frameData);
+        }
+
+        for(FrameData framedata : frameDataList){
+            System.out.println(framedata.getImages());
+>>>>>>> 1b1e0a7e6c08e6620efbb50b808e921b823211ab:src/main/java/org/example/scraper/DustloopScraper.java
         }
 
         //batch POST the list
