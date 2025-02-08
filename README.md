@@ -3,11 +3,23 @@
 ![image](https://github.com/user-attachments/assets/74780774-bbd2-4e5a-804d-a870fa5262bd)
 ## Tools, libraries and technologies:
 
-Java: Spring Boot, JUnit, JSoup
+Frameworks & Libraries:
+* Java: Spring Boot (WebFlux, JPA), JSoup
 
-Python: Pycord, Requests
+* Python: Pycord, Requests
 
-Other: Postman, MySQL, Docker
+* Testing: JUnit, Mockito, Testcontainers
+
+Database:
+* MySQL
+  
+Tools & Other Technologies:
+
+* Docker
+  
+* Maven
+  
+* Postman
 
 ## To-Do List
 
